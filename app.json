@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Chronix",
+    "slug": "chronix",
+    "scheme": "chronix",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B1120",
+    "splash": {
+      "backgroundColor": "#0B1120"
+    },
+    "plugins": ["expo-router"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chronix.app"
+    },
+    "android": {
+      "package": "com.chronix.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B1120"
+      }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}

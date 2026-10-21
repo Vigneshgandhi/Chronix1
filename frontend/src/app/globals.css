@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-chronix-primary: #4D00D7;
+  --color-chronix-secondary: #4D2696;
+  --color-chronix-accent: #D6CB00;
+  --color-chronix-olive: #817D2B;
+  --color-chronix-deep: #3B2B57;
+  --color-chronix-white: #FFFFFF;
+  --color-chronix-surface: #F8F7FB;
+  --color-chronix-elevated: #F5F3FA;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+:root { --background: #FFFFFF; --foreground: #17121f; }
+html, body { min-height: 100%; background: #fff; }
+body { color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+* { border-color: rgb(59 43 87 / .13); }
+
+button, a, input, textarea { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #4D00D7; outline-offset: 3px; }
+::selection { background: #4D00D7; color: #fff; }
+
+.chronix-page { background: #fff; color: #17121f; }
+.chronix-hero { background: radial-gradient(ellipse 70% 50% at 50% -5%, rgb(77 0 215 / .09), transparent 68%), #fff; }
+.chronix-panel { background: #fff; border: 1px solid rgb(59 43 87 / .13); box-shadow: 0 1px 3px rgb(33 20 58 / .06); }
+.chronix-elevated { background: #F5F3FA; border: 1px solid rgb(77 38 150 / .14); }
+.chronix-primary { background: #4D00D7; color: #fff; }
+.chronix-primary:hover { background: #4D2696; }
+.chronix-secondary { background: #4D2696; color: #fff; }
+.chronix-outline { background: #fff; border: 1px solid #4D00D7; color: #4D00D7; }
+.chronix-outline:hover { background: #F5F3FA; }
+.chronix-accent { background: #D6CB00; color: #000; }
+.chronix-label { color: #4D2696; }
+.chronix-muted { color: #625d6c; }
+
+/* Light-theme guardrails for the legacy utility markup still used on a few
+   routes. They intentionally map the old cyber-dark palette to the Chronix
+   surface system, rather than merely inverting text colours. */
+.chronix-page [class*="bg-[#050816"],
+.chronix-page [class*="bg-[#07111d"],
+.chronix-page [class*="bg-[#0B1220"],
+.chronix-page [class*="bg-[#0b1624"],
+.chronix-page [class*="bg-slate-900"],
+.chronix-page [class*="bg-slate-950"],
+.chronix-page [class*="bg-slate-800"] { background-color: #F8F7FB !important; }
+
+.chronix-page [class*="bg-black/20"] { background-color: #FFFFFF !important; }
+.chronix-page [class*="bg-black/75"] { background-color: rgb(59 43 87 / .28) !important; }
+
+.chronix-page [class*="bg-cyan-500/"] { background-color: rgb(77 0 215 / .09) !important; }
+.chronix-page [class*="bg-cyan-400/"] { background-color: rgb(77 38 150 / .12) !important; }
+.chronix-page [class*="bg-cyan-500"]:not([class*="bg-cyan-500/"]) { background-color: #4D00D7 !important; }
+.chronix-page [class*="bg-cyan-400"]:not([class*="bg-cyan-400/"]) { background-color: #4D2696 !important; }
+.chronix-page [class*="bg-cyan-500"]:not([class*="bg-cyan-500/"])[class*="text-black"],
+.chronix-page [class*="bg-cyan-400"]:not([class*="bg-cyan-400/"])[class*="text-black"] { color: #FFFFFF !important; }
+.chronix-page [class*="bg-sky-"] { background-color: #F5F3FA !important; }
+
+.chronix-page [class*="text-cyan-"], .chronix-page [class*="text-sky-"] { color: #4D2696 !important; }
+.chronix-page [class*="border-cyan-"], .chronix-page [class*="border-sky-"] { border-color: rgb(77 38 150 / .24) !important; }
+.chronix-page [class*="shadow-cyan-"], .chronix-page [class*="shadow-sky-"] { --tw-shadow-color: rgb(77 0 215 / .12) !important; }
+
+.chronix-page [class*="text-slate-300"],
+.chronix-page [class*="text-slate-400"],
+.chronix-page [class*="text-slate-500"],
+.chronix-page [class*="text-slate-600"] { color: #625d6c !important; }
+
+/* Legacy white labels become readable on light cards. Explicit branded buttons
+   and sent-message bubbles retain their white foreground. */
+.chronix-page [class*="text-white"]:not([class*="bg-chronix-primary"]):not([class*="bg-chronix-secondary"]):not([class*="bg-cyan-500"]):not([class*="bg-red-"]) { color: #17121f !important; }
